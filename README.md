@@ -2,9 +2,13 @@
 
 ![taskapp icon](/dist1/icon.png)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TaskApp is a comprehensive task management application designed to help users organize their tasks and maximize productivity. 
 
-Currently, two official plugins are available:
+Similar to Microsoft Todo, TaskApp offers efficient tools for planning and managing daily tasks, weekly schedules, and any other important to-dos. With TaskApp, users can easily add, edit, and delete tasks, as well as mark tasks as completed, categorize them into different sections, and set reminders.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ The user-friendly interface of TaskApp allows for seamless task management and prioritization, ensuring that users stay organized and on track to achieve their goals throughout the day.
+
+> [!NOTE]
+> The Project dosent complited yet and in near future it going to get new feature.
+
+You can install and use PWA Taskapp right now on [Taskapp.yanate.ir](https://taskapp.yanate.ir/).
