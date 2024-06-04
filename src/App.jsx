@@ -4,7 +4,6 @@ import "./styles.css";
 import { TodoList } from "./TodoList";
 import Modal from 'react-modal';
 
-
 export default function App() {
   const [todos, setTodos] = useState(() => {
     const localValue = localStorage.getItem("ITEMS");
@@ -28,10 +27,12 @@ export default function App() {
   
 
   function addTodo(title) {
-    setTodos(currentTodos => [
-      ...currentTodos,
-      { id: crypto.randomUUID(), title, completed: false, category: selectedCategory },
-    ]);
+    setTodos(currentTodos => {
+      return [
+        ...currentTodos,
+        { id: crypto.randomUUID(), title, completed: false },
+      ];
+    });
   }
 
   function toggleTodo(id, completed) {
@@ -52,6 +53,8 @@ export default function App() {
     });
   }
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const handleDeleteAll = () => {
     setIsModalOpen(true);
   };
@@ -68,52 +71,6 @@ export default function App() {
   const toggleTheme = () => {
     setIsLightModeLoaded(!isLightModeLoaded); 
   };
-
-  const [newCategoryName, setNewCategoryName] = useState("");
-  const [categories, setCategories] = useState([
-    { id: 1, name: "Personal" },
-    { id: 2, name: "Work" },
-    { id: 3, name: "Shopping" },
-  ]);
-
-  const handleAddCategory = (e) => {
-    e.preventDefault();
-    const newCategory = { id: crypto.randomUUID(), name: newCategoryName };
-    setCategories([...categories, newCategory]);
-    setNewCategoryName("");
-  };
-
-  useEffect(() => {
-    localStorage.setItem("categories", JSON.stringify(categories));
-  }, [categories]);
-
-  const categoriesData = [
-    {
-      id: 1,
-      name: "کار",
-    },
-    {
-      id: 2,
-      name: "شخصی",
-    },
-    {
-      id: 3,
-      name: "خرید",
-    },
-  ];
-  
-  const [selectedCategory, setSelectedCategory] = useState(categories[0].id);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-  
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-  
-
 
   return (
     <>
@@ -165,17 +122,7 @@ export default function App() {
           </button>
         </div>
       </header>
-      
-      <form onSubmit={handleAddCategory}>
-        <input
-          type="text"
-          value={newCategoryName}
-          onChange={(e) => setNewCategoryName(e.target.value)}
-          placeholder="New Category Name"
-        />
-        <button type="submit">Add Category</button>
-      </form>
-      <NewTodoForm onSubmit={addTodo} categories={categoriesData} />
+      <NewTodoForm onSubmit={addTodo} />
       <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
     </>
   );

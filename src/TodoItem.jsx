@@ -1,17 +1,19 @@
-import React from "react";
-
-export function TodoItem({ todo, toggleTodo, deleteTodo, getCategoryName }) {
+export function TodoItem({ completed, id, title, toggleTodo, deleteTodo }) {
   return (
-    <li key={todo.id}>
+    <li>
       <label>
         <input
           type="checkbox"
-          checked={todo.completed}
-          onChange={() => toggleTodo(todo.id, !todo.completed)}
+          checked={completed}
+          onChange={e => toggleTodo(id, e.target.checked)}
         />
-        {todo.title} ({getCategoryName(todo.category)})
-        <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+        <p>{title}</p>
       </label>
+      <button onClick={() => deleteTodo(id)} className="">
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12.5 25C15.8152 25 18.9946 23.683 21.3388 21.3388C23.683 18.9946 25 15.8152 25 12.5C25 9.18479 23.683 6.00537 21.3388 3.66117C18.9946 1.31696 15.8152 0 12.5 0C9.18479 0 6.00537 1.31696 3.66117 3.66117C1.31696 6.00537 0 9.18479 0 12.5C0 15.8152 1.31696 18.9946 3.66117 21.3388C6.00537 23.683 9.18479 25 12.5 25ZM8.54492 8.54492C9.00391 8.08594 9.74609 8.08594 10.2002 8.54492L12.4951 10.8398L14.79 8.54492C15.249 8.08594 15.9912 8.08594 16.4453 8.54492C16.8994 9.00391 16.9043 9.74609 16.4453 10.2002L14.1504 12.4951L16.4453 14.79C16.9043 15.249 16.9043 15.9912 16.4453 16.4453C15.9863 16.8994 15.2441 16.9043 14.79 16.4453L12.4951 14.1504L10.2002 16.4453C9.74121 16.9043 8.99902 16.9043 8.54492 16.4453C8.09082 15.9863 8.08594 15.2441 8.54492 14.79L10.8398 12.4951L8.54492 10.2002C8.08594 9.74121 8.08594 8.99902 8.54492 8.54492Z" fill="#C72727"/>
+        </svg>
+      </button>
     </li>
-  );
+  )
 }
