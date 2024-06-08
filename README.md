@@ -1,6 +1,6 @@
 # Taskapp made by Reza Sanagoo
 
-![taskapp icon](/dist1/icon.png)
+![taskapp icon](/public/icon.png)
 
 TaskApp is a comprehensive task management application designed to help users organize their tasks and maximize productivity. 
 
@@ -8,7 +8,5 @@ Similar to Microsoft Todo, TaskApp offers efficient tools for planning and manag
 
  The user-friendly interface of TaskApp allows for seamless task management and prioritization, ensuring that users stay organized and on track to achieve their goals throughout the day.
 
-> [!NOTE]
-> The Project dosent complited yet and in near future it going to get new feature.
-
+# 
 You can install and use PWA Taskapp right now on [Taskapp.yanate.ir](https://taskapp.yanate.ir/).
