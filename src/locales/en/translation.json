@@ -1,0 +1,32 @@
+{
+    "welcome": "Welcome,",
+    "aydth": "Add yout daily Task here.",
+    "task": "Task",
+    "add": "Add",
+    "update": "Update",
+    "delete": "Delete",
+    "edit": "Edit",
+    "settings": "Settings",
+    "export": "Export",
+    "import": "Import",
+    "themeToggle": "Toggle Theme",
+    "deleteAll": "Delete All",
+    "eath": "Enter a task here",
+    "TaskApp": "TaskApp",
+    "Lists": "Lists",
+    "Manage Data": "Manage Data",
+    "Select Language": "Select Language",
+    "Add list": "Add List",
+    "New List": "New List",
+    "Close": "Close",
+    "credit": "All of Your data will store in your own device and there is no data connection. Made by ",
+    "rez": "Reza Sanagoo",
+    "Yes": "Erase my Data",
+    "No": "Cancel",
+    "HIR": "Here is a remider for ",
+    "TR": "Task Remider",  
+    "done": "Done",
+    "not": "Notification"  
+  
+  }
+  

@@ -1,43 +1,56 @@
-import { useState } from "react"
+import { useState, useEffect } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus, faPenToSquare  } from '@fortawesome/free-solid-svg-icons'
+import { motion } from "framer-motion";
+import DateTimePicker from './DateTimePicker';
+import { useTranslation } from "react-i18next";
 
-export function NewTodoForm({ onSubmit }) {
-  const [newItem, setNewItem] = useState("")
+export function NewTodoForm({ onSubmit, isEditing, editingTodo }) {
+  const [newItem, setNewItem] = useState("");
+  const [dueDate, setDueDate] = useState("");
+  const fapl = <FontAwesomeIcon className="fapl" icon={faPlus} />;
+  const fape = <FontAwesomeIcon className="fape" icon={faPenToSquare} />;
+  const { t } = useTranslation();
+  
+
+  useEffect(() => {
+    if (isEditing && editingTodo) {
+      setNewItem(editingTodo.title);
+      setDueDate(editingTodo.dueDate);
+    }
+  }, [isEditing, editingTodo]);
 
   function handleSubmit(e) {
-    e.preventDefault()
-    if (newItem === "") return
+    e.preventDefault();
+    if (newItem === "") return;
 
-    onSubmit(newItem)
-
-    setNewItem("")
+    onSubmit({ title: newItem, dueDate });
+    setNewItem("");
+    setDueDate("");
   }
 
   return (
     <form onSubmit={handleSubmit} className="new-item-form" autoComplete="off">
       <div className="form-row">
-        <input
+        <motion.input
+          layout
           value={newItem}
           onChange={e => setNewItem(e.target.value)}
           type="text"
           id="item"
-          placeholder="Enter a task here"
+          placeholder={t('eath')}
+          className="maininput"
         />
-        <button className="btn">
-        <svg width="21" height="28" viewBox="0 0 21 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clipPath="url(#clip0_3_15)">
-                <path d="M11.7359 2.26407C11.0523 1.58047 9.94214 1.58047 9.25855 2.26407L0.508545 11.0141C-0.175049 11.6977 -0.175049 12.8078 0.508545 13.4914C1.19214 14.175 2.30229 14.175 2.98589 13.4914L8.74995 7.72188V24.5C8.74995 25.468 9.53198 26.25 10.5 26.25C11.4679 26.25 12.25 25.468 12.25 24.5V7.72188L18.014 13.4859C18.6976 14.1695 19.8078 14.1695 20.4914 13.4859C21.175 12.8024 21.175 11.6922 20.4914 11.0086L11.7414 2.2586L11.7359 2.26407Z" fill="#131314"/>
-            </g>
-            <defs>
-                <clipPath id="clip0_3_15">
-                    <rect width="21" height="28" fill="white"/>
-                </clipPath>
-            </defs>
-        </svg>
-
-        </button>
+        <motion.div  whileHover={{ scale: 1.05 }} transition={{duration: 0.25,}} className="datetime-input">
+          
+        <DateTimePicker dueDate={dueDate} setDueDate={setDueDate} />
+        </motion.div>
+        <motion.button  whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.85 }} transition={{duration: 0.25,}} className='btn' id={isEditing ? "fape" : "fapl"}>
+          {fape}
+          {fapl}
+        </motion.button>
       </div>
-      <p>All of Your data will store in your own device and there is no
-data connection. Made by <a href="https://rezsa.yanate.ir"><span>Reza Sanagoo</span></a>.</p>
+      
     </form>
-  )
+  );
 }

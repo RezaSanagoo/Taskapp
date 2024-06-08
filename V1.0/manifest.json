@@ -15,7 +15,7 @@
     ],
     "start_url": "/",
     "display": "standalone",
-    "theme_color": "#caccce",
+    "theme_color": "#168ca1",
     "background_color": "#131314",
     "scope": "/",
     "serviceworker": {

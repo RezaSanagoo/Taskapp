@@ -1,0 +1,24 @@
+{
+  "short_name": "TaskApp",
+  "name": "TaskApp",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#168ca1",
+  "background_color": "#131314",
+  "scope": "/",
+  "serviceworker": {
+    "src": "/service-worker.js"
+  }
+}
