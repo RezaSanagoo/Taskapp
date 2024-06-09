@@ -8,12 +8,6 @@ Similar to Microsoft Todo, TaskApp offers efficient tools for planning and manag
 
  The user-friendly interface of TaskApp allows for seamless task management and prioritization, ensuring that users stay organized and on track to achieve their goals throughout the day.
 
-<<<<<<< HEAD
-# 
-You can install and use PWA Taskapp right now on [Taskapp.yanate.ir](https://taskapp.yanate.ir/).
-=======
-
-
  
 # Dependencies
 
@@ -87,4 +81,3 @@ npm install react-datepicker --save
 All rights belong to Reza Sanagoo.
 Email me at Rezasanagoo021@gmail.com for any questions or problems.
 You can install and use PWA Taskapp right now on [TaskApp](https://taskapp.yanate.ir/).
->>>>>>> a89cc048d58e028c7bb1d8b9adeacaae6cd9c213
