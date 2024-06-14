@@ -9,7 +9,7 @@ const urlsToCache = [
   '/assets/Alibaba-Bold-BjMJTvpu.woff2',
   '/assets/Alibaba-Regular-CbtUYRy0.woff2',
   '/assets/index-C4dm3a30.css',
-  '/assets/index-BJexBpMB.js',
+  '/assets/index-BcTW84_c.js',
   '/fav.ico',
 ];
 

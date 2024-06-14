@@ -56,7 +56,7 @@ export function TodoItem({ id, title, completed, toggleTodo, deleteTodo, handleE
           />
           <p>{title}</p>
         </label>
-        <div>
+        <div style={{minWidth: 68,}}>
           <button onClick={() => handleEditTodo({ id, title, completed })} style={{ margin: "0 6px" }}>
             <FontAwesomeIcon icon={faPen} />
           </button>
